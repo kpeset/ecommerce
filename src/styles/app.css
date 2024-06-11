@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+footer {
+  background-color: red;
+}
+
+p {
+  margin-bottom: 1rem;
+}

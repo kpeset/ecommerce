@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: lightblue;
+}
+
+nav > img {
+  height: 2rem;
+}
+
+nav > ul {
+  display: flex;
+  gap: 1rem;
+}
