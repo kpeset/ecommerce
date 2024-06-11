@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import ArticleJaguar from "./components/ArticleJaguar";
 import ArticleStratocaster from "./components/ArticleStratocaster";
 import ArticleSg from "./components/ArticleSg";
+import Telecaster from "./components/Telecaster";
 
 function App() {
   const role = "admin";
@@ -27,6 +28,7 @@ function App() {
           <ArticleJaguar />
           <ArticleStratocaster />
           <ArticleSg />
+          <Telecaster />
         </section>
         {role === "admin" ? <Admin /> : "Non autorisé"}
       </main>
