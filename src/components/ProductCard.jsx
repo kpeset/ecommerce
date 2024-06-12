@@ -1,14 +1,9 @@
 /* eslint-disable react/prop-types */
 export default function ProductCard({ product }) {
-  console.log(product.available);
-
-  // si available est true alors notre mission est d'afficher "en stock", sinon
-  // on affichera non disponible
-
   return (
     <article>
       <div className="left_side">
-        <img src={product.picture} alt="" />
+        <img src={product.picture} alt={`Image d'une ${product.model}`} />
         <div className="description">
           <h2>{product.model}</h2>
           <p>{product.description}</p>
