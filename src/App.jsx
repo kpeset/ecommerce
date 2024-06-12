@@ -7,28 +7,20 @@ import ArticleStratocaster from "./components/ArticleStratocaster";
 import ArticleSg from "./components/ArticleSg";
 
 function App() {
-  const role = "admin";
-
-  // const displayAdmin = () => {
-  //   if (role === "admin") {
-  //     return <Admin />;
-  //   } else {
-  //     return "Non autorisé";
-  //   }
-  // };
+  // remplacer la valeur par "admin" pour voir les changements sur la page
+  const role = "user";
 
   return (
     <>
       <Navbar />
       <main>
         <h1>Ma boutique en ligne</h1>
-        <p>Cliquez sur un article pour l&apos;acheter</p>
         <section>
           <ArticleJaguar />
           <ArticleStratocaster />
           <ArticleSg />
         </section>
-        {role === "admin" ? <Admin /> : "Non autorisé"}
+        {role === "admin" ? <Admin /> : ""}
       </main>
       <Footer />
     </>
