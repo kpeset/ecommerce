@@ -1,8 +1,6 @@
-# React + Vite
+# React Basics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dans cet atelier, nous avons vu les bases de React.
+Tu dois aller sur les différentes branches pour voir ce qui a été ajouté lors des différents live co :
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Création d'un composant](https://github.com/kpeset/ecommerce/tree/step_01)
