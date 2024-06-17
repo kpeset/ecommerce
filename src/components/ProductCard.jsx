@@ -1,5 +1,9 @@
 /* eslint-disable react/prop-types */
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, tools }) {
+  const addArticle = () => {
+    tools.setBasket((prevBasket) => [...prevBasket, product]);
+  };
+
   return (
     <article>
       <div className="left_side">
@@ -7,7 +11,9 @@ export default function ProductCard({ product }) {
         <div className="description">
           <h2>{product.model}</h2>
           <p>{product.description}</p>
-          <button>Consulter l&apos;article</button>
+          <button onClick={product.available === true ? addArticle : null}>
+            Ajouter l&apos;article
+          </button>
 
           {product.available === true ? (
             <h4 className="available">Disponible</h4>

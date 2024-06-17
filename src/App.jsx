@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
 import ProductCard from "./components/ProductCard";
+import Basket from "./components/Basket";
 
 function App() {
   const productList = [
@@ -35,6 +37,8 @@ function App() {
     },
   ];
 
+  const [basket, setBasket] = useState([]);
+
   return (
     <>
       <Navbar />
@@ -42,9 +46,14 @@ function App() {
         <h1>Ma boutique en ligne</h1>
         <section>
           {productList.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              tools={{ basket, setBasket }}
+            />
           ))}
         </section>
+        <Basket basket={basket} />
       </main>
       <Footer />
     </>
