@@ -63,20 +63,27 @@ function App() {
 
   const [basket, setBasket] = useState([]);
   const [selection, setSelection] = useState("");
+  const [checkAvailable, setCheckAvailable] = useState(false);
 
   const handleChangeSelection = (event) => {
     setSelection(event.target.value);
   };
+
+  const handleChangeAvailable = () => {
+    setCheckAvailable(!checkAvailable);
+  };
+
   // OPTION 1 FILTRE
   // const filteredProductList = productList.filter((product) =>
   //   selection === "" ? product : product.category === selection
   // );
 
   // OPTION 2 FILTRE
-  const filteredProductList = productList.filter(
-    (product) => product.category === selection || selection === ""
-  );
+  const filteredProductList = productList
+    .filter((product) => product.category === selection || selection === "")
+    .filter((product) => (checkAvailable ? product.available : true));
 
+  console.log(filteredProductList);
   return (
     <>
       <Navbar />
@@ -91,14 +98,24 @@ function App() {
             <option value="acoustic">Acoustic</option>
           </select>
         </label>
+        <label> Voir uniquement les guitares disponibles :</label>
+        <input
+          type="checkbox"
+          name="available"
+          onChange={handleChangeAvailable}
+        ></input>
         <section>
-          {filteredProductList.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              tools={{ basket, setBasket }}
-            />
-          ))}
+          {filteredProductList.length > 0 ? (
+            filteredProductList.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                tools={{ basket, setBasket }}
+              />
+            ))
+          ) : (
+            <p>{`Il n'y a pas de guitare ${selection} disponible`}</p>
+          )}
         </section>
         <Basket basket={basket} />
       </main>
